@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+          body {
+        background-color: #f0f0f0; /* Light grey background for the whole page */
+    }
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto; /* Center the form on the page */
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for a 3D effect */
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="text-center">Patient Registration</h2>
+        <form id="patientRegistrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Details:</label>
+                <input type="text" id="contact" name="contact" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="medicalHistory">Medical History:</label>
+                <textarea id="medicalHistory" name="medicalHistory" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    // Add an event listener to handle the form submission
+    document.getElementById('patientRegistrationForm').addEventListener('submit', function (e) {
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('contact').value;
+        
+        // Check if the 'name' or 'contact' fields are empty
+        if (name.trim() === '' || contact.trim() === '') {
+            alert('Name and Contact Details are required!');
+            e.preventDefault(); // Prevent form submission if validation fails
+        }
+    });
+</script>
+
+</body>
+</html>
